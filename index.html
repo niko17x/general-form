@@ -4,11 +4,75 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arizonia&family=Qwitcher+Grypen&family=Raleway&display=swap" rel="stylesheet">
   <script src="main.js" defer></script>
   <link rel="stylesheet" href="style.css">
   <title>Javascript Form Validation</title>
 </head>
 <body>
+
+  <div class="container">
+
+    <div class="form-header">
+      <h1>Sign Up Now</h1>
+      <span>It's quick and easy!</span>
+      <span class="close">&#10006;</span>
+    </div>
+
+    <div class="form-body">
+      <form action="" id="main-form">
+        <div class="row-one">
+          <label class="first-name" for="first-name">
+            First Name
+            <input type="text" id="first-name" placeholder="First Name">
+          </label>
+          <label class="last-name" for="last-name">
+            Last Name
+            <input type="text" id="last-name" placeholder="Last Name">
+          </label>
+        </div>
+        <div class="row-two">
+          <label class="email" for="email">
+            Email
+            <input type="email" name="email" id="email" placeholder="Email">
+          </label>
+        </div>
+        <div class="row-three">
+          <label class="country" for="country">
+            Country
+            <input type="text" id="country" placeholder="Country">
+          </label>
+          <label class="zip-code" for="zip-code">
+            Zip Code
+            <input type="text" pattern="[0-9]" id="zip-code" placeholder="Zip Code">
+          </label>
+        </div>
+        <div class="row-four">
+          <label class="password" for="password">
+            Password
+            <input type="password" name="password" id="password" placeholder="Password">
+          </label>
+          <label class="confirm-password" for="confirm-password">
+            Confirm Password
+            <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password">
+          </label>
+        </div>
+        <div class="submit-form-btn">
+          <button class="submit-btn" type="submit" form="main-form">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-footer">
+
+    </div>
+
+
+
+    
+  </div>
   
 </body>
 </html>
