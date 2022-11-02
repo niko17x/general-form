@@ -1,0 +1,58 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+      "airbnb-base", 
+      "prettier"],
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+      // Allows additional blank lines and spaces around comments:
+      "lines-around-comment": [
+       "error",
+       {
+         "beforeBlockComment": true,
+         "afterBlockComment": true,
+         "beforeLineComment": true,
+         "afterLineComment": true,
+         "allowBlockStart": true,
+         "allowBlockEnd": true,
+         "allowObjectStart": true,
+         "allowObjectEnd": true,
+         "allowArrayStart": true,
+         "allowArrayEnd": true
+       }
+     ],
+     "no-confusing-arrow": ["error", { "allowParens": false }],
+     // Auto determines if parenthesis are required or not for multi operators:
+     "no-mixed-operators": "error",
+     // Allows tabs for spacing:
+     "no-tabs": ["error", {"allowIndentationTabs": true}],
+     // Quotes are automatically converted to double quotes:
+     "quotes": [
+       "error",
+       "double",
+       { "avoidEscape": true, "allowTemplateLiterals": false }
+     ],
+     // Allows prettier to break up long lines of code if enabled:
+     "curly": ["error", "all"],
+     // Using 'alert()' in code gives warning:
+     "no-alert": "warn",
+     // Throws an error if trying to call before defined:
+     "no-use-before-define": ["error", {
+       "functions": false,
+       "classes": true,
+       "variables": true,
+       "allowNamedExports": false
+     }],
+     // Determines the max amount of classes per file:
+     "max-classes-per-file": ["error", 5],
+     // Allows function parameters to be reassigned:
+     "no-param-reassign": ["error", {"props": false}]
+   }
+}
