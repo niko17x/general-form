@@ -13,17 +13,15 @@ body {
 }
 
 .container {
+  background: #32425be5;
   position: relative;
   display: grid;
   place-self: center;
   border: 7px solid black;
-  height: 60vh;
-  width: 25rem;
+  /* height: 65vh; */
+  width: 55vw;
   padding: 1rem;
   border-radius: 0 0 0 10px;
-
-  /* background: linear-gradient(#ffffff, #9198e5); */
-  background: #32425be5;
 }
 
 .form-header {
@@ -39,6 +37,7 @@ body {
 
 .form-header span {
   color: rgba(69, 247, 152, 0.863);
+  margin: 0.3rem 0 1rem 0;
 }
 
 .form-header span {
@@ -50,8 +49,8 @@ body {
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 96.4%;
-  bottom: 97%;
+  left: 97.4%;
+  bottom: 95.5%;
   height: 30px;
   width: 30px;
   border: 3px solid white;
@@ -61,7 +60,7 @@ body {
 }
 
 .form-header .close:hover {
-  background: yellow;
+  background: rgb(46, 80, 230);
   transform: scale(1.7);
 }
 
@@ -76,45 +75,45 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-}
-
-.row-two,
-.row-four {
-  display: grid;
-  width: 100%;
-}
-
-.row-one .first-name,
-.row-one .last-name {
-  display: grid;
-  justify-content: space-evenly;
-}
-
-.row-two .email {
-  display: grid;
-  justify-content: space-evenly;
+  gap: 1rem;
 }
 
 .row-two input,
 .row-four input {
-  width: 22rem;
+  gap: 1rem;
 }
 
-.row-three .country,
-.row-three .zip-code {
+.row-four {
   display: grid;
-  justify-content: space-evenly;
+  gap: 1rem;
 }
 
-.row-four .password,
-.row-four .confirm-password {
+#password,
+#confirm-password,
+#email,
+#first-name,
+#last-name,
+#country,
+#zip-code {
+  width: 100%;
+}
+
+#country {
+  height: 2.1rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  background: #32425be5;
+  color: white;
   display: grid;
-  justify-content: space-evenly;
+  margin-top: 0.55rem;
+  padding: 0.5rem;
+  font-family: 'Raleway';
 }
 
-.row-four .confirm-password {
-  margin-top: 1rem;
+.error-msg {
+  opacity: 0.3;
 }
+
 
 label {
   /* visibility: hidden; */
@@ -141,7 +140,8 @@ input {
   color: white;
 }
 
-input:focus {
+input:focus,
+#country:focus {
   outline: none;
   /* border: 0; */
   box-shadow: none;
@@ -191,3 +191,35 @@ input:focus {
 .submit-btn:focus-visible {
   box-shadow: none;
 }
+
+
+/* ! DYNAMIC CLASSES: */
+.error {
+  color: rgb(255, 0, 0);
+
+}
+
+.error-glow {
+  box-shadow: 0 0 8px rgb(238, 112, 81);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgb(238, 112, 81);
+
+  color: rgb(238, 112, 81);
+}
+
+.success-glow {
+  box-shadow: 0 0 8px rgb(84, 238, 81);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgb(84, 238, 81);
+  color: rgb(84, 238, 81);
+}
+
+.is-blurred {
+  filter: blur(4px);
+}
+
+
+
+
