@@ -56,6 +56,7 @@ function helperValidate(typeInput, typeError) {
   if (typeInput.validity.valid) {
     typeError.textContent = "";
     typeError.className = "error";
+    typeError.classList.add("check");
   } else {
     showError();
   }
@@ -112,6 +113,7 @@ confirmPasswordInput.addEventListener("input", () => {
   if (confirmPasswordInput.value !== passwordInput.value) {
     showError();
   } else {
+    confirmPasswordError.className = "check";
     confirmPasswordError.textContent = "";
   }
 });
