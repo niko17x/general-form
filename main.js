@@ -14,6 +14,47 @@ const passwordError = document.querySelector(".password-error");
 const confirmPasswordInput = document.querySelector("#confirm-password");
 const confirmPasswordError = document.querySelector(".confirm-password-error");
 
+const LOCAL_STORAGE_USER_LIST = "data.userList";
+
+const userList =
+  JSON.parse(localStorage.getItem(LOCAL_STORAGE_USER_LIST)) || [];
+
+function save() {
+  localStorage.setItem(LOCAL_STORAGE_USER_LIST, JSON.stringify(userList));
+}
+
+class UserObj {
+  constructor(
+    firstName,
+    lastName,
+    email,
+    country,
+    zipCode,
+    password,
+    confirmPassword
+  ) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.country = country;
+    this.zipCode = zipCode;
+    this.password = password;
+    this.confirmPassword = confirmPassword;
+  }
+}
+
+const newUser = new UserObj();
+
+function createUser() {
+  newUser.firstName = firstNameInput.value;
+  newUser.lastName = lastNameInput.value;
+  newUser.email = emailInput.value;
+  newUser.country = countryInput.value;
+  newUser.zipCode = zipCodeInput.value;
+  newUser.password = passwordInput.value;
+  newUser.confirmPassword = confirmPasswordInput.value;
+}
+
 function showError() {
   if (firstNameInput.validity.valueMissing) {
     firstNameError.textContent = "First name is required.";
@@ -90,7 +131,14 @@ mainForm.addEventListener("submit", (e) => {
   ) {
     e.preventDefault();
     showError();
+  } else {
+    // Take form input values and store data as objects:
+
+    createUser();
+    userList.push(newUser);
+    save();
   }
+  e.preventDefault();
 });
 
 // Validate Country selection (non-input element):
@@ -111,6 +159,7 @@ passwordInput.addEventListener("input", () => {
 
 confirmPasswordInput.addEventListener("input", () => {
   if (confirmPasswordInput.value !== passwordInput.value) {
+    confirmPasswordError.classList.remove("check");
     showError();
   } else {
     confirmPasswordError.className = "check";
